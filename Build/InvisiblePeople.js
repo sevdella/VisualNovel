@@ -95,7 +95,8 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
-        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0004);
+        // await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
+        await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.school);
         await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.shy, Template.ƒS.positionPercent(30, 110));
@@ -386,6 +387,7 @@ var Template;
         await Template.ƒS.update(0.7);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
         Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 1);
+        Template.ƒS.Speech.hide();
     }
     Template.QuickEnding = QuickEnding;
 })(Template || (Template = {}));

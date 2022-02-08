@@ -40,7 +40,8 @@ namespace Template {
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
-    await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
+    // await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
+    await ƒS.update(1);
     await ƒS.Location.show(locations.school);
     await ƒS.update(transitions.clock.duration, transitions.clock.alpha, transitions.clock.edge);
     await ƒS.Character.show(characters.inara, characters.inara.pose.shy, ƒS.positionPercent(30, 110));

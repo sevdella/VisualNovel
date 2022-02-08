@@ -16,5 +16,6 @@ namespace Template {
     
       await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
       ƒS.Sound.fade(sound.backgroundTheme, 0, 1);
+      ƒS.Speech.hide();
     }
 }
