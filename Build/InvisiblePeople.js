@@ -6,6 +6,7 @@ var Template;
         let text = {
             rame: {
                 T0000: "Let's go for some shopping then!",
+                T0001: "Let's visit your bookshop, I really want to see it!",
             },
             inara: {
                 T0000: "I love vintage clothing, so i go thrift shopping in my free time",
@@ -33,6 +34,7 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
+                await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
                 break;
             case HobbyOption.draw:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
@@ -176,7 +178,7 @@ var Template;
     };
     Template.sound = {
         // music
-        backgroundTheme: "./Audio/The_Introvert.mp3",
+        backgroundTheme: "",
         //sound
         click: ""
     };
@@ -209,11 +211,11 @@ var Template;
             name: "Black",
             background: "./Images/Background/Black.png"
         },
-        ThriftShop: {
+        thriftshop: {
             name: "ThriftShop",
             background: "./Images/Background/ThriftShop.png"
         },
-        CoffeeShop: {
+        coffeeshop: {
             name: "CoffeeShop",
             background: "./Images/Background/CoffeeShop.png"
         }
@@ -356,7 +358,7 @@ var Template;
         console.log("QuickEnding");
         let text = {
             narrator: {
-                T0000: "0",
+                T0000: "The End",
                 T0001: ""
             }
         };
@@ -379,12 +381,7 @@ var Template;
 (function (Template) {
     async function ShoppingWithRame() {
         console.log("ShoppingWithRame");
-        let text = {};
-        Template.ƒS.Character.hideAll();
-        await Template.ƒS.Location.show(Template.locations.black);
-        await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
-        await Template.ƒS.Location.show(Template.locations.thriftshop);
     }
     Template.ShoppingWithRame = ShoppingWithRame;
 })(Template || (Template = {}));
-//# sourceMappingURL=Template.js.map
+//# sourceMappingURL=InvisiblePeople.js.map

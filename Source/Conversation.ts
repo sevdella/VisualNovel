@@ -6,6 +6,7 @@ namespace Template {
             rame: {
                 T0000: "Let's go for some shopping then!",
                 T0001: "Let's visit your bookshop, I really want to see it!",
+                T0002: "You need to show me some drawings!",
             },
             inara: {
                 T0000: "I love vintage clothing, so i go thrift shopping in my free time",
@@ -45,10 +46,11 @@ namespace Template {
                 await ƒS.Speech.tell(characters.inara, text.inara.T0002);
                 await ƒS.Speech.tell(characters.inara, text.inara.T0003);
                 await ƒS.Speech.tell(characters.rame,text.rame.T0001);
-                break;
+                return "DayWithRame";
 
             case HobbyOption.draw:
                 await ƒS.Speech.tell(characters.inara, text.inara.T0004);
+                await ƒS.Speech.tell(characters.rame,text.rame.T0002);
                 break;
 
 

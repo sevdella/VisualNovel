@@ -65,11 +65,11 @@ declare namespace Template {
             name: string;
             background: string;
         };
-        ThriftShop: {
+        thriftshop: {
             name: string;
             background: string;
         };
-        CoffeeShop: {
+        coffeeshop: {
             name: string;
             background: string;
         };

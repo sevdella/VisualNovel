@@ -32,7 +32,7 @@ namespace Template {
 
   export let sound = {
     // music
-    backgroundTheme: "./Audio/The_Introvert.mp3",
+    backgroundTheme: "", //./Audio/The_Introvert.mp3
 
     //sound
     click: ""
