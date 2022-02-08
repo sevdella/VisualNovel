@@ -7,6 +7,7 @@ var Template;
             rame: {
                 T0000: "Let's go for some shopping then!",
                 T0001: "Let's visit your bookshop, I really want to see it!",
+                T0002: "You need to show me some drawings!",
             },
             inara: {
                 T0000: "I love vintage clothing, so i go thrift shopping in my free time",
@@ -35,9 +36,10 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
-                break;
+                return "DayWithRame";
             case HobbyOption.draw:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
+                await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
                 break;
         }
         Template.ƒS.Character.hideAll();
@@ -381,6 +383,10 @@ var Template;
 (function (Template) {
     async function ShoppingWithRame() {
         console.log("ShoppingWithRame");
+        await Template.ƒS.Location.show(Template.locations.thriftshop);
+        await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
     }
     Template.ShoppingWithRame = ShoppingWithRame;
 })(Template || (Template = {}));
