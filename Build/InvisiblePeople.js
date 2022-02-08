@@ -42,8 +42,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
                 break;
         }
-        // ƒS.Character.hideAll();
-        // await ƒS.update(1);
+        Template.ƒS.Character.hideAll();
+        await Template.ƒS.update(1);
     }
     Template.Conversation = Conversation;
 })(Template || (Template = {}));
@@ -99,7 +99,7 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.school);
         await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.shy, Template.ƒS.positionPercent(30, 110));
-        await Template.ƒS.update(0.3);
+        await Template.ƒS.update(0.7);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
@@ -400,10 +400,16 @@ var Template;
 (function (Template) {
     async function ShoppingWithRame() {
         console.log("ShoppingWithRame");
+        let text = {
+            rame: {
+                T0000: "Wow what a cute shop"
+            }
+        };
         await Template.ƒS.Location.show(Template.locations.thriftshop);
         await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
     }
     Template.ShoppingWithRame = ShoppingWithRame;
 })(Template || (Template = {}));

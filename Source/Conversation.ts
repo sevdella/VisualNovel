@@ -55,7 +55,7 @@ namespace Template {
 
 
         }
-       // ƒS.Character.hideAll();
-       // await ƒS.update(1);
+       ƒS.Character.hideAll();
+       await ƒS.update(1);
     }
 }
