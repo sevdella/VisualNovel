@@ -4,6 +4,14 @@ namespace Template {
 
 
     let text = {
+      narrator: {
+        T0000: "It's the Year 20XX, the world developed drastically just as humanity whose hearts now function with neon lights.",
+        T0001: "Every individual has their significant colour glowing from their heart",
+        T0002: "Should they ever find their Soulmate, the colour of the significant other will fuse with ones own colour",
+        T0003: "But...",
+        T0004: "Even today dysfunctions exist"
+
+      },
       inara: {
         T0000: "First Day of College...",
         T0001: "Alright, deep breath",
@@ -27,11 +35,16 @@ namespace Template {
     ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.9, true);
 
 
-
+    await ƒS.Location.show(locations.black);
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
+    await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
     await ƒS.Location.show(locations.school);
     await ƒS.update(transitions.clock.duration, transitions.clock.alpha, transitions.clock.edge);
     await ƒS.Character.show(characters.inara, characters.inara.pose.shy, ƒS.positionPercent(30, 110));
-    await ƒS.update(0.3);
+    await ƒS.update(0.7);
     await ƒS.Speech.tell(characters.inara, text.inara.T0000);
     await ƒS.Speech.tell(characters.inara, text.inara.T0001);
     await ƒS.Speech.tell(characters.inara, text.inara.T0002);

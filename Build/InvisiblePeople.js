@@ -42,8 +42,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
                 break;
         }
-        Template.ƒS.Character.hideAll();
-        await Template.ƒS.update(1);
+        // ƒS.Character.hideAll();
+        // await ƒS.update(1);
     }
     Template.Conversation = Conversation;
 })(Template || (Template = {}));
@@ -51,6 +51,10 @@ var Template;
 (function (Template) {
     async function DayWithRame() {
         console.log("DayWithRame");
+        await Template.ƒS.Location.show(Template.locations.coffeeshop);
+        await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
     }
     Template.DayWithRame = DayWithRame;
 })(Template || (Template = {}));
@@ -59,6 +63,13 @@ var Template;
     async function Introduction() {
         console.log("Intro");
         let text = {
+            narrator: {
+                T0000: "It's the Year 20XX, the world developed drastically just as humanity whose hearts now function with neon lights.",
+                T0001: "Every individual has their significant colour glowing from their heart",
+                T0002: "Should they ever find their Soulmate, the colour of the significant other will fuse with ones own colour",
+                T0003: "But...",
+                T0004: "Even today dysfunctions exist"
+            },
             inara: {
                 T0000: "First Day of College...",
                 T0001: "Alright, deep breath",
@@ -79,6 +90,12 @@ var Template;
         };
         Template.ƒS.Speech.setTickerDelays(80, 500);
         Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0.2, 0.9, true);
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0004);
         await Template.ƒS.Location.show(Template.locations.school);
         await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.shy, Template.ƒS.positionPercent(30, 110));
