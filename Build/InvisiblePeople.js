@@ -54,7 +54,7 @@ var Template;
 (function (Template) {
     async function DayWithRame() {
         console.log("DayWithRame");
-        await Template.ƒS.Location.show(Template.locations.coffeeshop);
+        await Template.ƒS.Location.show(Template.locations.bookshop);
         await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
