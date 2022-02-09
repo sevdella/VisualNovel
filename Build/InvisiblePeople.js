@@ -31,8 +31,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
                 await Template.ƒS.update(0.7);
-                //return "ShoppingWithRame";
-                return Template.ShoppingWithRame();
+                return "ShoppingWithRame";
+            //return ShoppingWithRame();
             case HobbyOption.read:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
@@ -361,6 +361,7 @@ var Template;
             // { id: "Ende", scene: End, name: "The End" }
             { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding" },
             { id: "Conversation", scene: Template.Conversation, name: "Conversation" },
+            { id: "ShoppingWithRame", scene: Template.ShoppingWithRame, name: "ShoppingWithRame" },
         ];
         let uiElement = document.querySelector("[type=interface]");
         Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
