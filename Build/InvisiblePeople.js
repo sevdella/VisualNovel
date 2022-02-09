@@ -30,7 +30,7 @@ var Template;
             case HobbyOption.thrift:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
-                return "ShoppingWithRame";
+                return "Introduction";
             case HobbyOption.read:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
@@ -96,6 +96,7 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
         // await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
+        Template.ƒS.Speech.hide();
         await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.school);
         await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);

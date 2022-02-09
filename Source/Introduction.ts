@@ -41,6 +41,7 @@ namespace Template {
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
     // await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
+    ƒS.Speech.hide();
     await ƒS.update(1);
     await ƒS.Location.show(locations.school);
     await ƒS.update(transitions.clock.duration, transitions.clock.alpha, transitions.clock.edge);

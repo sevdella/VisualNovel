@@ -47,6 +47,7 @@ namespace Template {
                 await ƒS.Speech.tell(characters.inara, text.inara.T0003);
                 await ƒS.Speech.tell(characters.rame,text.rame.T0001);
                 return "DayWithRame";
+                
 
             case HobbyOption.draw:
                 await ƒS.Speech.tell(characters.inara, text.inara.T0004);
@@ -56,6 +57,6 @@ namespace Template {
 
         }
        ƒS.Character.hideAll();
-       await ƒS.update(1);
+        await ƒS.update(1);
     }
 }
