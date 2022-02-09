@@ -30,7 +30,8 @@ var Template;
             case HobbyOption.thrift:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
-                return "ShoppingWithRame";
+                //return "ShoppingWithRame";
+                return Template.ShoppingWithRame();
             case HobbyOption.read:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
@@ -154,7 +155,7 @@ var Template;
                         return "Conversation";
                     case replyToHerDecision.dontAnswer:
                         await Template.ƒS.Speech.tell(Template.characters.inara, "I'd rather not about personal stuff");
-                        return "";
+                        break;
                 }
                 break;
         }
@@ -409,7 +410,7 @@ var Template;
             }
         };
         await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
-        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.Location.show(Template.locations.thriftshop);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);

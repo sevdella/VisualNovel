@@ -112,7 +112,7 @@ namespace Template {
 
           case replyToHerDecision.dontAnswer:
             await ƒS.Speech.tell(characters.inara, "I'd rather not about personal stuff");
-            return "";
+            break;
         }
         break;
 
