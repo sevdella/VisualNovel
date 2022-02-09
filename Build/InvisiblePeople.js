@@ -30,8 +30,8 @@ var Template;
             case HobbyOption.thrift:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
-                //return "ShoppingWithRame";
-                return Template.ShoppingWithRame();
+                return "ShoppingWithRame";
+            //return ShoppingWithRame();
             case HobbyOption.read:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);

@@ -38,6 +38,7 @@ namespace Template {
             case HobbyOption.thrift:
                 await ƒS.Speech.tell(characters.inara, text.inara.T0000);
                 await ƒS.Speech.tell(characters.rame,text.rame.T0000);
+                await ƒS.update(0.7);
             return "ShoppingWithRame";
             //return ShoppingWithRame();
 
