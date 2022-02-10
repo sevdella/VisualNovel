@@ -48,8 +48,8 @@ namespace Template {
                 await ƒS.Speech.tell(characters.inara, text.inara.T0002);
                 await ƒS.Speech.tell(characters.inara, text.inara.T0003);
                 await ƒS.Speech.tell(characters.rame,text.rame.T0001);
-                //return "DayWithRame";
-            return DayWithRame();
+            return "DayWithRame";
+            //return DayWithRame();
                 
 
             case HobbyOption.draw:

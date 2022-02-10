@@ -216,6 +216,7 @@ namespace Template {
       {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding"},
       {id: "Conversation", scene:Conversation, name: "Conversation"},
       {id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
+      {id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},
 
 
     ];

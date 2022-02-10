@@ -362,6 +362,7 @@ var Template;
             { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding" },
             { id: "Conversation", scene: Template.Conversation, name: "Conversation" },
             { id: "ShoppingWithRame", scene: Template.ShoppingWithRame, name: "ShoppingWithRame" },
+            { id: "DayWithRame", scene: Template.DayWithRame, name: "DayWithRame" },
         ];
         let uiElement = document.querySelector("[type=interface]");
         Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
