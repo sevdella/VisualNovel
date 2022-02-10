@@ -126,8 +126,17 @@ namespace Template {
 
   export function fromRightToOutOfCanvas(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(30, 100) },
-      end: { translation: ƒS.positionPercent(120, 100) },
+      start: { translation: ƒS.positionPercent(50, 110) },
+      end: { translation: ƒS.positionPercent(120, 110) },
+      duration: 1,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+
+  export function fromLeftToOutOfCanvas(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(30, 110) },
+      end: { translation: ƒS.positionPercent(120, 110) },
       duration: 1,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };

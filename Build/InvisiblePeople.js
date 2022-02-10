@@ -31,6 +31,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
                 await Template.ƒS.update(0.7);
+                await Template.ƒS.Character.animate(Template.characters.rame, Template.characters.rame.pose.happy, Template.fromRightToOutOfCanvas());
+                await Template.ƒS.Character.animate(Template.characters.inara, Template.characters.inara.pose.happy, Template.fromLeftToOutOfCanvas());
                 return "ShoppingWithRame";
             //return ShoppingWithRame();
             case HobbyOption.read:
@@ -38,8 +40,8 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
-                //return "DayWithRame";
-                return Template.DayWithRame();
+                return "DayWithRame";
+            //return DayWithRame();
             case HobbyOption.draw:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
@@ -54,6 +56,10 @@ var Template;
 (function (Template) {
     async function DayWithRame() {
         console.log("DayWithRame");
+        let text = {
+            inara: {},
+            rame: {}
+        };
         await Template.ƒS.Location.show(Template.locations.bookshop);
         await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
@@ -284,13 +290,22 @@ var Template;
     Template.fromRighttoLeft = fromRighttoLeft;
     function fromRightToOutOfCanvas() {
         return {
-            start: { translation: Template.ƒS.positionPercent(30, 100) },
-            end: { translation: Template.ƒS.positionPercent(120, 100) },
+            start: { translation: Template.ƒS.positionPercent(50, 110) },
+            end: { translation: Template.ƒS.positionPercent(120, 110) },
             duration: 1,
             playmode: Template.ƒS.ANIMATION_PLAYMODE.PLAYONCE
         };
     }
     Template.fromRightToOutOfCanvas = fromRightToOutOfCanvas;
+    function fromLeftToOutOfCanvas() {
+        return {
+            start: { translation: Template.ƒS.positionPercent(30, 110) },
+            end: { translation: Template.ƒS.positionPercent(120, 110) },
+            duration: 1,
+            playmode: Template.ƒS.ANIMATION_PLAYMODE.PLAYONCE
+        };
+    }
+    Template.fromLeftToOutOfCanvas = fromLeftToOutOfCanvas;
     Template.dataForSave = {
         points: 0
     };
@@ -410,7 +425,14 @@ var Template;
         console.log("ShoppingWithRame");
         let text = {
             rame: {
-                T0000: "Wow what a cute shop"
+                T0000: "Wow what a cute shop",
+                T0001: "How did you even find it, it's in such a hidden location?",
+                T0002: "This is such a nice break from the bustling city life",
+                T0003: "I get why you like it here"
+            },
+            inara: {
+                T0000: "Happens if you wander around mindlessly...",
+                T0001: "Right? Look at this skirt, isn't it cute?"
             }
         };
         await Template.ƒS.Location.show(Template.locations.thriftshop);
@@ -418,6 +440,15 @@ var Template;
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.Location.show(Template.locations.thriftshop);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
     }
     Template.ShoppingWithRame = ShoppingWithRame;
 })(Template || (Template = {}));

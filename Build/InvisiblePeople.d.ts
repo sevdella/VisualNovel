@@ -104,6 +104,7 @@ declare namespace Template {
     };
     function fromRighttoLeft(): ƒS.AnimationDefinition;
     function fromRightToOutOfCanvas(): ƒS.AnimationDefinition;
+    function fromLeftToOutOfCanvas(): ƒS.AnimationDefinition;
     let dataForSave: {
         points: number;
     };
