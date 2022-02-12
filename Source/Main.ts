@@ -14,7 +14,7 @@ namespace Template {
       edge: 1
     },
     stripes: {
-      duration: 0.7,
+      duration: 0.5,
       alpha: "./Transitions/018.jpg",
       edge: 1
     },
@@ -27,6 +27,11 @@ namespace Template {
       duration: 1,
       alpha: "./Transitions/Glitch.gif",
       edge: 1
+    },
+    slide: {
+      duration:1,
+      alpha: "./Transitions/005.jpg",
+      edge:1
     }
   };
 
@@ -82,6 +87,10 @@ namespace Template {
     coffeeshop: {
       name: "CoffeeShop",
       background: "./Images/Background/CoffeeShop.png"
+    },
+    heart:{
+      name:"Heart",
+      background: "./Images/Background/Glitch.png"
     }
   };
 
@@ -224,8 +233,9 @@ namespace Template {
       // { id: "Ende", scene: End, name: "The End" }
       {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding"},
       {id: "Conversation", scene:Conversation, name: "Conversation"},
-      {id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
+      {id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame", next: "Friendship"},
       {id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},
+      {id: "Friendship", scene:Friendship, name: "Friendship"},
 
 
     ];

@@ -5,6 +5,9 @@ declare namespace Template {
     function DayWithRame(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Friendship(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function Introduction(): ƒS.SceneReturn;
 }
 declare namespace Template {
@@ -27,6 +30,11 @@ declare namespace Template {
             edge: number;
         };
         glitch: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
+        slide: {
             duration: number;
             alpha: string;
             edge: number;
@@ -70,6 +78,10 @@ declare namespace Template {
             background: string;
         };
         coffeeshop: {
+            name: string;
+            background: string;
+        };
+        heart: {
             name: string;
             background: string;
         };

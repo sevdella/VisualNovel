@@ -13,7 +13,8 @@ namespace Template {
                 T0006: "It feels good not to be alone anymore",
                 T0007: "It's quite hard to find someone with a dysfunctional heart these days",
                 T0008: "It's nothing to be ashamed of! It's actually really cool",
-                T0009: "Inara..believe me. I will show you"
+                T0009: "Inara..believe me. I will show you",
+                T0010: "Today was really fun! WE should do this more often"
             },
             inara: {
                 T0000: "Happens if you wander around mindlessly...",
@@ -26,41 +27,24 @@ namespace Template {
 
     
         }
+        await ƒS.Location.show(locations.black);
+        await ƒS.update(1);
         await ƒS.Location.show(locations.thriftshop);
-        await ƒS.update(transitions.stripes.duration, transitions.stripes.alpha, transitions.stripes.edge);
         await ƒS.Character.show(characters.inara, characters.inara.pose.happy, ƒS.positionPercent(30, 110));
         await ƒS.Character.show(characters.rame, characters.rame.pose.happy, ƒS.positionPercent(50, 110));
         await ƒS.Speech.tell(characters.rame, text.rame.T0000);
         await ƒS.Speech.tell(characters.rame, text.rame.T0001);
         await ƒS.Speech.tell(characters.inara, text.inara.T0000);
         await ƒS.Speech.tell(characters.rame, text.rame.T0002);
-        await ƒS.update(1);
         await ƒS.Speech.tell(characters.inara, text.inara.T0001);
-        await ƒS.Character.hideAll();
-        //await ƒS.Location.show(locations.black);
+        await ƒS.Speech.tell(characters.rame,text.rame.T0010);
+        ƒS.Character.hideAll();
+        await ƒS.Location.show(locations.black);
+        //await ƒS.update(1);
         //await ƒS.Location.show(locations.thriftshop);
         //await ƒS.Character.show(characters.inara, characters.inara.pose.happy, ƒS.positionPercent(30, 110));
         //await ƒS.Character.show(characters.rame, characters.rame.pose.happy, ƒS.positionPercent(50, 110));
-
-
-
-        let PanicOption = {
-            seekhelp: "Help me",
-            runaway: "I'm sorry"
-
-        };
-        
-        let Panic = await ƒS.Menu.getInput(PanicOption, "individualCSSClass");
-
-        switch (Panic) {
-
-            case PanicOption.seekhelp:
-
-            case PanicOption.runaway:
-
-        }
-
-
+        await ƒS.update(1);
 
     }
 }

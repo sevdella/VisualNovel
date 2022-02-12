@@ -60,12 +60,33 @@ var Template;
             inara: {},
             rame: {}
         };
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         await Template.ƒS.Location.show(Template.locations.bookshop);
         await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
+        return "Friendship";
     }
     Template.DayWithRame = DayWithRame;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function Friendship() {
+        console.log("Friendship");
+        let text = {
+            inara: {},
+            rame: {
+                T0000: "blablabla"
+            }
+        };
+        await Template.ƒS.update(1);
+        await Template.ƒS.Location.show(Template.locations.inbookshop);
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.shy, Template.ƒS.positionPercent(30, 110));
+    }
+    Template.Friendship = Friendship;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -191,7 +212,7 @@ var Template;
             edge: 1
         },
         stripes: {
-            duration: 0.7,
+            duration: 0.5,
             alpha: "./Transitions/018.jpg",
             edge: 1
         },
@@ -203,6 +224,11 @@ var Template;
         glitch: {
             duration: 1,
             alpha: "./Transitions/Glitch.gif",
+            edge: 1
+        },
+        slide: {
+            duration: 1,
+            alpha: "./Transitions/005.jpg",
             edge: 1
         }
     };
@@ -248,6 +274,10 @@ var Template;
         coffeeshop: {
             name: "CoffeeShop",
             background: "./Images/Background/CoffeeShop.png"
+        },
+        heart: {
+            name: "Heart",
+            background: "./Images/Background/Glitch.png"
         }
     };
     Template.characters = {
@@ -376,8 +406,9 @@ var Template;
             // { id: "Ende", scene: End, name: "The End" }
             { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding" },
             { id: "Conversation", scene: Template.Conversation, name: "Conversation" },
-            { id: "ShoppingWithRame", scene: Template.ShoppingWithRame, name: "ShoppingWithRame" },
+            { id: "ShoppingWithRame", scene: Template.ShoppingWithRame, name: "ShoppingWithRame", next: "Friendship" },
             { id: "DayWithRame", scene: Template.DayWithRame, name: "DayWithRame" },
+            { id: "Friendship", scene: Template.Friendship, name: "Friendship" },
         ];
         let uiElement = document.querySelector("[type=interface]");
         Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
@@ -434,7 +465,8 @@ var Template;
                 T0006: "It feels good not to be alone anymore",
                 T0007: "It's quite hard to find someone with a dysfunctional heart these days",
                 T0008: "It's nothing to be ashamed of! It's actually really cool",
-                T0009: "Inara..believe me. I will show you"
+                T0009: "Inara..believe me. I will show you",
+                T0010: "Today was really fun! WE should do this more often"
             },
             inara: {
                 T0000: "Happens if you wander around mindlessly...",
@@ -444,30 +476,24 @@ var Template;
                 T0004: "I was bullied for it, there's nothing cool about it!!"
             }
         };
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.thriftshop);
-        await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
-        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
-        await Template.ƒS.Character.hideAll();
-        //await ƒS.Location.show(locations.black);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0010);
+        Template.ƒS.Character.hideAll();
+        await Template.ƒS.Location.show(Template.locations.black);
+        //await ƒS.update(1);
         //await ƒS.Location.show(locations.thriftshop);
         //await ƒS.Character.show(characters.inara, characters.inara.pose.happy, ƒS.positionPercent(30, 110));
         //await ƒS.Character.show(characters.rame, characters.rame.pose.happy, ƒS.positionPercent(50, 110));
-        let PanicOption = {
-            seekhelp: "Help me",
-            runaway: "I'm sorry"
-        };
-        let Panic = await Template.ƒS.Menu.getInput(PanicOption, "individualCSSClass");
-        switch (Panic) {
-            case PanicOption.seekhelp:
-            case PanicOption.runaway:
-        }
+        await Template.ƒS.update(1);
     }
     Template.ShoppingWithRame = ShoppingWithRame;
 })(Template || (Template = {}));
