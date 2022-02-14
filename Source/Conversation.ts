@@ -21,7 +21,7 @@ namespace Template {
         }
 
         let HobbyOption = {
-            thrift: "Thrift Shopping",
+            thrift: "Shopping",
             read: "Reading",
             draw: "Drawing"
 

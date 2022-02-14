@@ -56,7 +56,7 @@ var Template;
             }
         };
         let HobbyOption = {
-            thrift: "Thrift Shopping",
+            thrift: "Shopping",
             read: "Reading",
             draw: "Drawing"
         };
@@ -121,40 +121,57 @@ var Template;
     async function Friendship() {
         console.log("Friendship");
         let text = {
+            narrator: {
+                T0000: "Inara and Rame grow closer and spend most of their time together",
+                T0001: ""
+            },
             inara: {
-                T0000: "yoohoo",
+                T0000: "This was fun again!",
                 T0001: "What the",
-                T0002: "How did you find out",
-                T0003: "Can You really help me?",
-                T0004: "I can't show up to class like this",
-                T0005: "What if they bully me as well"
+                T0002: "No! I always cover it up how did you notice?!",
+                T0003: "How will you be able to help me?",
+                T0004: "I'm sorry, I can't do this",
+                T0005: "I can't show up to class like this",
+                T0006: "What if they bully me as well"
             },
             rame: {
-                T0000: "blablabla",
-                T0001: "Let's head outside",
-                T0002: "It's nothing to be ashamed of",
-                T0003: "I'm just like you",
-                T0004: "Yes"
+                T0000: "Hahaha yes!",
+                T0001: "Let's head home, it's already dark outside",
+                T0002: "Oh cool, I didn't know your heart doesn't glow as well",
+                T0003: "Don't panic! It's not that big of a deal!",
+                T0004: "You shouldn't hide it, let me help you get rid of that fear",
+                T0005: "I'm just like you",
+                T0006: "You learned to love yourself and that's how you got confident"
             }
         };
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.inbookshop);
-        await Template.ƒS.update(Template.transitions.slide.duration, Template.transitions.slide.alpha, Template.transitions.slide.edge);
-        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
-        await Template.ƒS.update(0.7);
-        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
-        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.shy, Template.ƒS.positionPercent(30, 110));
+        await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.happy, Template.ƒS.positionPercent(30, 110));
+        await Template.ƒS.update(0.3);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.flirty, Template.ƒS.positionPercent(50, 110));
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
         await Template.ƒS.update(0.3);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
         await Template.ƒS.Location.show(Template.locations.bookshop);
+        await Template.ƒS.update(Template.transitions.swirl.duration, Template.transitions.swirl.alpha, Template.transitions.swirl.edge);
         Template.ƒS.update(2);
+        await Template.ƒS.Character.hide(Template.characters.rame);
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
         await Template.ƒS.Character.hide(Template.characters.inara);
-        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.upset, Template.ƒS.positionPercent(30, 110));
-        Template.ƒS.update(2);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(30, 110));
+        Template.ƒS.update(0.1);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
-        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0004);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0005);
         await Template.ƒS.update(1);
         let PanicAttack = {
             seekhelp: "Help me",
@@ -185,7 +202,9 @@ var Template;
                 await Template.ƒS.update(1);
                 return "Truth";
             case PanicAttack.runaway:
+                await Template.ƒS.Character.hide(Template.characters.inara);
                 await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.upset, Template.ƒS.positionPercent(30, 110));
+                await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
                 await Template.ƒS.Character.animate(Template.characters.inara, Template.characters.inara.pose.upset, Template.fromLeftToOutOfCanvas());
                 return "BadEnding";
         }
