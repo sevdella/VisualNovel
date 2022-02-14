@@ -14,6 +14,9 @@ declare namespace Template {
     function Friendship(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Glitch(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function Introduction(): ƒS.SceneReturn;
 }
 declare namespace Template {
@@ -51,6 +54,7 @@ declare namespace Template {
         neonheart: string;
         click: string;
         paper: string;
+        thunder: string;
     };
     let locations: {
         school: {

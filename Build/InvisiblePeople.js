@@ -3,6 +3,11 @@ var Template;
 (function (Template) {
     async function BadEnding() {
         console.log("BadEnding");
+        Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 0.1, false);
+        Template.ƒS.Sound.fade(Template.sound.neonheart, 0.3, 0.1, true);
+        Template.ƒS.Character.hideAll();
+        await Template.ƒS.Location.show(Template.locations.greyheart);
+        await Template.ƒS.update(0.7);
     }
     Template.BadEnding = BadEnding;
 })(Template || (Template = {}));
@@ -165,6 +170,7 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
         await Template.ƒS.Character.hide(Template.characters.inara);
+        await Template.ƒS.Sound.fade(Template.sound.thunder, 0.4, 1);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(30, 110));
         Template.ƒS.update(0.1);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
@@ -185,22 +191,7 @@ var Template;
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0004);
                 await Template.ƒS.Character.hide(Template.characters.inara);
                 await Template.ƒS.Character.hide(Template.characters.rame);
-                await Template.ƒS.Location.show(Template.locations.timeskip);
-                await Template.ƒS.update(0.7);
-                await Template.ƒS.Location.show(Template.locations.black);
-                await Template.ƒS.Location.show(Template.locations.heart);
-                Template.ƒS.update(1);
-                await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(60, 110));
-                await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
-                await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0005);
-                await Template.ƒS.Character.hide(Template.characters.inara);
-                await Template.ƒS.Speech.hide();
-                // School
-                await Template.ƒS.Location.show(Template.locations.school);
-                await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
-                await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.scared, Template.ƒS.positionPercent(50, 110));
-                await Template.ƒS.update(1);
-                return "Truth";
+                return "Glitch";
             case PanicAttack.runaway:
                 await Template.ƒS.Character.hide(Template.characters.inara);
                 await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.upset, Template.ƒS.positionPercent(30, 110));
@@ -210,6 +201,34 @@ var Template;
         }
     }
     Template.Friendship = Friendship;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function Glitch() {
+        console.log("Glitch");
+        let text = {
+            inara: {
+                T0000: "",
+                T0001: ""
+            }
+        };
+        await Template.ƒS.Location.show(Template.locations.timeskip);
+        await Template.ƒS.update(0.7);
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.Location.show(Template.locations.heart);
+        Template.ƒS.update(1);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(60, 110));
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
+        await Template.ƒS.Character.hide(Template.characters.inara);
+        await Template.ƒS.Speech.hide();
+        // School
+        await Template.ƒS.Location.show(Template.locations.school);
+        await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.scared, Template.ƒS.positionPercent(50, 110));
+        await Template.ƒS.update(1);
+    }
+    Template.Glitch = Glitch;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -365,6 +384,7 @@ var Template;
         //sound
         click: "",
         paper: "./Audio/paper.mp3",
+        thunder: "./Audio/Thunder.mp3"
     };
     Template.locations = {
         school: {
@@ -550,6 +570,7 @@ var Template;
             { id: "Books", scene: Template.Books, name: "Books" },
             { id: "Drawing", scene: Template.Drawing, name: "Drawing" },
             { id: "Truth", scene: Template.Truth, name: "Truth" },
+            { id: "Glitch", scene: Template.Glitch, name: "Glitch" },
             { id: "BadEnding", scene: Template.BadEnding, name: "BadEnding" },
             //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
             //{id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},

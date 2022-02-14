@@ -44,6 +44,7 @@ namespace Template {
     //sound
     click: "",
     paper: "./Audio/paper.mp3", 
+    thunder:"./Audio/Thunder.mp3"
   };
 
   export let locations = {
@@ -252,6 +253,7 @@ namespace Template {
       {id: "Books", scene:Books, name: "Books"},
       {id:"Drawing", scene:Drawing, name: "Drawing"},
       {id: "Truth", scene:Truth, name:"Truth"},
+      {id: "Glitch", scene:Glitch, name:"Glitch"},
       {id: "BadEnding", scene:BadEnding, name:"BadEnding"},
       //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
       //{id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},

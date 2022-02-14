@@ -50,6 +50,7 @@ namespace Template {
         await ƒS.Speech.tell(characters.rame,text.rame.T0002);
         await ƒS.Speech.tell(characters.inara,text.inara.T0001);
         await ƒS.Character.hide(characters.inara);
+        await ƒS.Sound.fade(sound.thunder,0.4,1);
         await ƒS.Character.show(characters.inara, characters.inara.pose.surprised,ƒS.positionPercent(30,110));
         ƒS.update(0.1);
         await ƒS.Speech.tell(characters.inara, text.inara.T0002);
@@ -77,22 +78,7 @@ namespace Template {
             await ƒS.Speech.tell(characters.rame,text.rame.T0004);
             await ƒS.Character.hide(characters.inara);
             await ƒS.Character.hide(characters.rame);
-            await ƒS.Location.show(locations.timeskip);
-            await ƒS.update(0.7);
-            await ƒS.Location.show(locations.black);
-            await ƒS.Location.show(locations.heart);
-            ƒS.update(1);
-            await ƒS.Character.show(characters.inara,characters.inara.pose.surprised, ƒS.positionPercent(60,110));
-            await ƒS.Speech.tell(characters.inara, text.inara.T0004);
-            await ƒS.Speech.tell(characters.inara, text.inara.T0005);
-            await ƒS.Character.hide(characters.inara);
-            await ƒS.Speech.hide();
-            // School
-            await ƒS.Location.show(locations.school);
-            await ƒS.update(transitions.clock.duration, transitions.clock.alpha, transitions.clock.edge);
-            await ƒS.Character.show(characters.rame,characters.rame.pose.scared, ƒS.positionPercent(50,110));
-            await ƒS.update(1);
-            return "Truth";
+            return "Glitch";
 
             case PanicAttack.runaway:
             await ƒS.Character.hide(characters.inara);
