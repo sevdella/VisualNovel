@@ -1,8 +1,11 @@
 declare namespace Template {
-    function Conversation(): ƒS.SceneReturn;
+    function BadEnding(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function DayWithRame(): ƒS.SceneReturn;
+    function Books(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Conversation(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function Friendship(): ƒS.SceneReturn;
@@ -42,6 +45,7 @@ declare namespace Template {
     };
     let sound: {
         backgroundTheme: string;
+        neonheart: string;
         click: string;
     };
     let locations: {
@@ -82,6 +86,10 @@ declare namespace Template {
             background: string;
         };
         heart: {
+            name: string;
+            background: string;
+        };
+        timeskip: {
             name: string;
             background: string;
         };
@@ -128,5 +136,8 @@ declare namespace Template {
     function Scene(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function ShoppingWithRame(): ƒS.SceneReturn;
+    function Thriftshop(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Truth(): ƒS.SceneReturn;
 }

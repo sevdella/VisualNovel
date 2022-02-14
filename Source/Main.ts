@@ -37,7 +37,9 @@ namespace Template {
 
   export let sound = {
     // music
-    backgroundTheme: "", //./Audio/The_Introvert.mp3
+    backgroundTheme: "./Audio/The_Introvert.mp3", //./Audio/The_Introvert.mp3
+
+    neonheart:"./Audio/neon_sound.mp3", //./Audio/neon_sound.mp3
 
     //sound
     click: ""
@@ -91,6 +93,10 @@ namespace Template {
     heart:{
       name:"Heart",
       background: "./Images/Background/Glitch.png"
+    },
+    timeskip:{
+      name:"Timeskip",
+      background: "./Images/Background/Timeskip.png"
     }
   };
 
@@ -233,8 +239,12 @@ namespace Template {
       // { id: "Ende", scene: End, name: "The End" }
       {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding"},
       {id: "Conversation", scene:Conversation, name: "Conversation"},
-      {id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame", next: "Friendship"},
-      {id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},
+      {id: "Thriftshop", scene:Thriftshop, name: "Thriftshop"},
+      {id: "Books", scene:Books, name: "Books"},
+      {id: "Truth", scene:Truth, name:"Truth"},
+      {id: "BadEnding", scene:BadEnding, name:"BadEnding"},
+      //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
+      //{id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},
       {id: "Friendship", scene:Friendship, name: "Friendship"},
 
 
