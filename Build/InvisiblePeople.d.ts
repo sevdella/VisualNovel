@@ -8,6 +8,9 @@ declare namespace Template {
     function Conversation(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Drawing(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function Friendship(): ƒS.SceneReturn;
 }
 declare namespace Template {
@@ -47,6 +50,7 @@ declare namespace Template {
         backgroundTheme: string;
         neonheart: string;
         click: string;
+        paper: string;
     };
     let locations: {
         school: {
@@ -90,6 +94,14 @@ declare namespace Template {
             background: string;
         };
         timeskip: {
+            name: string;
+            background: string;
+        };
+        drawing1: {
+            name: string;
+            background: string;
+        };
+        drawing2: {
             name: string;
             background: string;
         };

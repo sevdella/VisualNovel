@@ -42,7 +42,8 @@ namespace Template {
     neonheart:"./Audio/neon_sound.mp3", //./Audio/neon_sound.mp3
 
     //sound
-    click: ""
+    click: "",
+    paper: "./Audio/paper.mp3", 
   };
 
   export let locations = {
@@ -97,6 +98,14 @@ namespace Template {
     timeskip:{
       name:"Timeskip",
       background: "./Images/Background/Timeskip.png"
+    },
+    drawing1:{
+      name:"Drawing1",
+      background: "./Images/Background/Drawing.png"
+    },
+    drawing2:{
+      name:"Drawing2",
+      background: "./Images/Background/Drawing2.png"
     }
   };
 
@@ -241,6 +250,7 @@ namespace Template {
       {id: "Conversation", scene:Conversation, name: "Conversation"},
       {id: "Thriftshop", scene:Thriftshop, name: "Thriftshop"},
       {id: "Books", scene:Books, name: "Books"},
+      {id:"Drawing", scene:Drawing, name: "Drawing"},
       {id: "Truth", scene:Truth, name:"Truth"},
       {id: "BadEnding", scene:BadEnding, name:"BadEnding"},
       //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},

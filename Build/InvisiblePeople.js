@@ -46,10 +46,6 @@ var Template;
                 T0000: "Let's go for some shopping then!",
                 T0001: "Let's visit your bookshop, I really want to see it!",
                 T0002: "You need to show me some drawings!",
-                T0003: "Wow what a cute shop",
-                T0004: "How did you even find it, it's in such a hidden location?",
-                T0005: "This is such a nice break from the bustling city life",
-                T0006: "Today was really fun! WE should do this more often"
             },
             inara: {
                 T0000: "I love vintage clothing, so i go thrift shopping in my free time",
@@ -57,8 +53,6 @@ var Template;
                 T0002: "I work in a Book Shop aswell. It's not a busy one",
                 T0003: "So I just get paid for reading basically",
                 T0004: "I'm not that big of an artist but drawing has been one of my favourite hobbies since forever",
-                T0005: "Happens if you wander around mindlessly...",
-                T0006: "Right? Look at this skirt, isn't it cute?"
             }
         };
         let HobbyOption = {
@@ -87,11 +81,40 @@ var Template;
             case HobbyOption.draw:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
-                return "Friendship";
+                await Template.ƒS.Character.hideAll();
+                return "Drawing";
         }
         await Template.ƒS.update(1);
     }
     Template.Conversation = Conversation;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function Drawing() {
+        console.log("Drawing");
+        let text = {
+            inara: {
+                T0000: "This is just a work in progress but my fave one so far",
+                T0001: "Sure!"
+            },
+            rame: {
+                T0000: "You are really talented!",
+                T0001: "I need to get some drawing lessons from you!"
+            }
+        };
+        await Template.ƒS.Location.show(Template.locations.drawing1);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
+        await Template.ƒS.Sound.fade(Template.sound.paper, 0.2, 1, true);
+        await Template.ƒS.update(2);
+        await Template.ƒS.Location.show(Template.locations.drawing2);
+        await Template.ƒS.update(2);
+        await Template.ƒS.Sound.fade(Template.sound.paper, 0, 1, false);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
+        return "Friendship";
+    }
+    Template.Drawing = Drawing;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -321,7 +344,8 @@ var Template;
         backgroundTheme: "./Audio/The_Introvert.mp3",
         neonheart: "./Audio/neon_sound.mp3",
         //sound
-        click: ""
+        click: "",
+        paper: "./Audio/paper.mp3",
     };
     Template.locations = {
         school: {
@@ -367,6 +391,14 @@ var Template;
         timeskip: {
             name: "Timeskip",
             background: "./Images/Background/Timeskip.png"
+        },
+        drawing1: {
+            name: "Drawing1",
+            background: "./Images/Background/Drawing.png"
+        },
+        drawing2: {
+            name: "Drawing2",
+            background: "./Images/Background/Drawing2.png"
         }
     };
     Template.characters = {
@@ -497,6 +529,7 @@ var Template;
             { id: "Conversation", scene: Template.Conversation, name: "Conversation" },
             { id: "Thriftshop", scene: Template.Thriftshop, name: "Thriftshop" },
             { id: "Books", scene: Template.Books, name: "Books" },
+            { id: "Drawing", scene: Template.Drawing, name: "Drawing" },
             { id: "Truth", scene: Template.Truth, name: "Truth" },
             { id: "BadEnding", scene: Template.BadEnding, name: "BadEnding" },
             //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
