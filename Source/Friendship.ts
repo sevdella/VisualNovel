@@ -13,8 +13,6 @@ namespace Template {
                 T0002: "No! I always cover it up how did you notice?!",
                 T0003: "How will you be able to help me?",
                 T0004: "I'm sorry, I can't do this",
-                T0005: "I can't show up to class like this",
-                T0006: "What if they bully me as well"
 
             },
 
@@ -40,22 +38,24 @@ namespace Template {
         await ƒS.Speech.tell(characters.inara,text.inara.T0000);
         await ƒS.Character.show(characters.rame, characters.rame.pose.flirty,ƒS.positionPercent(50, 110));
         await ƒS.Speech.tell(characters.rame,text.rame.T0000);
-        await ƒS.update(0.3);
+        await ƒS.update(0.2);
         await ƒS.Speech.tell(characters.rame,text.rame.T0001);
         await ƒS.Location.show(locations.bookshop);
         await ƒS.update(transitions.swirl.duration, transitions.swirl.alpha, transitions.swirl.edge);
-        ƒS.update(2);
+        ƒS.update();
         await ƒS.Character.hide(characters.rame);
         await ƒS.Character.show(characters.rame,characters.rame.pose.happy, ƒS.positionPercent(50,110));
         await ƒS.Speech.tell(characters.rame,text.rame.T0002);
         await ƒS.Speech.tell(characters.inara,text.inara.T0001);
-        await ƒS.Character.hide(characters.inara);
         await ƒS.Sound.fade(sound.thunder,0.4,1);
+        await ƒS.Character.hide(characters.inara);
         await ƒS.Character.show(characters.inara, characters.inara.pose.surprised,ƒS.positionPercent(30,110));
-        ƒS.update(0.1);
+        ƒS.update();
         await ƒS.Speech.tell(characters.inara, text.inara.T0002);
         await ƒS.Speech.tell(characters.rame, text.rame.T0003);
         await ƒS.Speech.tell(characters.rame, text.rame.T0004);
+        await ƒS.Character.hide(characters.rame);
+        await ƒS.Character.show(characters.rame,characters.rame.pose.sad, ƒS.positionPercent(50,110));
         await ƒS.Speech.tell(characters.inara, text.inara.T0003);
         await ƒS.Speech.tell(characters.rame, text.rame.T0005);
         
@@ -73,11 +73,11 @@ namespace Template {
         switch (Panic) {
 
             case PanicAttack.seekhelp:
-            //await ƒS.Character.show(characters.inara,characters.inara.pose.upset, ƒS.positionPercent(30,110));
             await ƒS.Speech.tell(characters.inara, text.inara.T0003);
             await ƒS.Speech.tell(characters.rame,text.rame.T0004);
             await ƒS.Character.hide(characters.inara);
             await ƒS.Character.hide(characters.rame);
+            await ƒS.Location.show(locations.timeskip);
             return "Glitch";
 
             case PanicAttack.runaway:
@@ -94,5 +94,6 @@ namespace Template {
 
 
         }
+        await ƒS.update(1);
     }
 }

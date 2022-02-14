@@ -43,7 +43,7 @@ namespace Template {
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
     await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
-    alert("The neon hearts visible on the chest of the characters is just a visualisation and not visible to the characters");
+    alert("DISCLAIMER!: The neon hearts are only visible to the reader to have a better understanding of the visualisation");
     
     ƒS.Speech.hide();
     await ƒS.update(1);

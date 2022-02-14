@@ -109,6 +109,18 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        yellowheart: {
+            name: string;
+            background: string;
+        };
+        purpleheart: {
+            name: string;
+            background: string;
+        };
+        fullheart: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         narrator: {

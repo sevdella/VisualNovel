@@ -107,6 +107,18 @@ namespace Template {
     drawing2:{
       name:"Drawing2",
       background: "./Images/Background/Drawing2.png"
+    },
+    yellowheart:{ 
+      name: "Yellowheart",
+      background:"./Images/Background/Yellowheart.png"
+    },
+    purpleheart: {
+      name:"Purpleheart",
+      background:"./Images/Background/Purpleheart.png"
+    },
+    fullheart: {
+      name:"Fullheart",
+      background:"./Images/Background/Fullheart.png"
     }
   };
 
@@ -134,7 +146,7 @@ namespace Template {
         upset: "./Images/Characters/Sad_Inara.png",
         embarrassed: "./Images/Charcters/Embarrassed_Inara.png",
         surprised: "./Images/Characters/Surprised_Inara.png",
-        shy: "./Images/Characters/Shy_Inara.png",
+        shy: "./Images/Characters/Shy_Inara2.png",
       }
     }
   };

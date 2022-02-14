@@ -136,8 +136,6 @@ var Template;
                 T0002: "No! I always cover it up how did you notice?!",
                 T0003: "How will you be able to help me?",
                 T0004: "I'm sorry, I can't do this",
-                T0005: "I can't show up to class like this",
-                T0006: "What if they bully me as well"
             },
             rame: {
                 T0000: "Hahaha yes!",
@@ -160,22 +158,24 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.flirty, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
-        await Template.ƒS.update(0.3);
+        await Template.ƒS.update(0.2);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
         await Template.ƒS.Location.show(Template.locations.bookshop);
         await Template.ƒS.update(Template.transitions.swirl.duration, Template.transitions.swirl.alpha, Template.transitions.swirl.edge);
-        Template.ƒS.update(2);
+        Template.ƒS.update();
         await Template.ƒS.Character.hide(Template.characters.rame);
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
-        await Template.ƒS.Character.hide(Template.characters.inara);
         await Template.ƒS.Sound.fade(Template.sound.thunder, 0.4, 1);
+        await Template.ƒS.Character.hide(Template.characters.inara);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(30, 110));
-        Template.ƒS.update(0.1);
+        Template.ƒS.update();
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0003);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0004);
+        await Template.ƒS.Character.hide(Template.characters.rame);
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.sad, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0005);
         await Template.ƒS.update(1);
@@ -186,11 +186,11 @@ var Template;
         let Panic = await Template.ƒS.Menu.getInput(PanicAttack, "individualCSSClass");
         switch (Panic) {
             case PanicAttack.seekhelp:
-                //await ƒS.Character.show(characters.inara,characters.inara.pose.upset, ƒS.positionPercent(30,110));
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0004);
                 await Template.ƒS.Character.hide(Template.characters.inara);
                 await Template.ƒS.Character.hide(Template.characters.rame);
+                await Template.ƒS.Location.show(Template.locations.timeskip);
                 return "Glitch";
             case PanicAttack.runaway:
                 await Template.ƒS.Character.hide(Template.characters.inara);
@@ -199,6 +199,7 @@ var Template;
                 await Template.ƒS.Character.animate(Template.characters.inara, Template.characters.inara.pose.upset, Template.fromLeftToOutOfCanvas());
                 return "BadEnding";
         }
+        await Template.ƒS.update(1);
     }
     Template.Friendship = Friendship;
 })(Template || (Template = {}));
@@ -207,15 +208,42 @@ var Template;
     async function Glitch() {
         console.log("Glitch");
         let text = {
+            narrator: {
+                T0000: "Suddenly at home"
+            },
             inara: {
-                T0000: "",
-                T0001: ""
+                T0000: "What is happening to me??",
+                T0001: "I can't show up to class like this",
+                T0002: "What if they bully me too",
+                T0003: "They will think I'm a freak",
+                T0004: "This is all her fault",
+                T0005: "I should stay away from her",
+                T0006: "I should call her",
+                T0007: "Maybe she has an idea what's happening",
+                T0008: "Thank you for showing this side of myself",
+                T0009: "I just had to believe in myself more"
             }
         };
-        await Template.ƒS.Location.show(Template.locations.timeskip);
-        await Template.ƒS.update(0.7);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Location.show(Template.locations.city);
+        await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.embarrassed, Template.ƒS.positionPercent(30, 110));
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0008);
+        Template.ƒS.Sound.fade(Template.sound.neonheart, 0.3, 1);
         await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.update(0.1);
         await Template.ƒS.Location.show(Template.locations.heart);
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Location.show(Template.locations.yellowheart);
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Location.show(Template.locations.yellowheart);
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Location.show(Template.locations.purpleheart);
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Location.show(Template.locations.yellowheart);
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Location.show(Template.locations.black);
         Template.ƒS.update(1);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(60, 110));
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
@@ -227,6 +255,7 @@ var Template;
         await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.scared, Template.ƒS.positionPercent(50, 110));
         await Template.ƒS.update(1);
+        return "";
     }
     Template.Glitch = Glitch;
 })(Template || (Template = {}));
@@ -268,7 +297,7 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
         await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
-        alert("The neon hearts visible on the chest of the characters is just a visualisation and not visible to the characters");
+        alert("DISCLAIMER!: The neon hearts are only visible to the reader to have a better understanding of the visualisation");
         Template.ƒS.Speech.hide();
         await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.school);
@@ -438,6 +467,18 @@ var Template;
         drawing2: {
             name: "Drawing2",
             background: "./Images/Background/Drawing2.png"
+        },
+        yellowheart: {
+            name: "Yellowheart",
+            background: "./Images/Background/Yellowheart.png"
+        },
+        purpleheart: {
+            name: "Purpleheart",
+            background: "./Images/Background/Purpleheart.png"
+        },
+        fullheart: {
+            name: "Fullheart",
+            background: "./Images/Background/Fullheart.png"
         }
     };
     Template.characters = {
@@ -464,7 +505,7 @@ var Template;
                 upset: "./Images/Characters/Sad_Inara.png",
                 embarrassed: "./Images/Charcters/Embarrassed_Inara.png",
                 surprised: "./Images/Characters/Surprised_Inara.png",
-                shy: "./Images/Characters/Shy_Inara.png",
+                shy: "./Images/Characters/Shy_Inara2.png",
             }
         }
     };
