@@ -1,6 +1,10 @@
-# FUDGE_Story
-A FUDGE module for the easy development of interactive stories, visual novels and simple adventure games
-
+# Invisible_People
+Humans are born with a transparent spot over their hearts, just like a small round window. The heart is made of a neon
+tube and each person has their own individual colour. It even exposes their emotions and current relationship. Depending
+on their mood, the neon heart changes its saturation or luminosity, and as soon as a person finds their soulmate in
+any kind of relationship, their colours merge in each of their hearts. One half of the heart keeps one’s own colour and
+the other half turns into the colour of their soulmate.
+Follow along Inara's life in this new world.
 
 # Reference
 - [APIs](https://jirkadelloro.github.io/FUDGE_Story/Documentation/Reference/#fudge-story-reference)
