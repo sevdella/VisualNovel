@@ -29,7 +29,7 @@ Follow along Inara's life in this new world.
 |  10 | Punkteverteilungssystem     | n/a                                                                                                                                                             |
 |  11 | Inventory- und Item-System     | n/a                                                                                                                                                                 |
 | 12 | Animation     | Animationen für die Charaktere um sie im bzw. aus dem Canvas zu bewegen | ✔                                                                                                                                                                 |
-| 13 | Styling          | Werden alle relevanten Elemente mithilfe von CSS gestylt?  |✔                                                                                                                                                                                |
+| 13 | Styling          | Dialogboxen und inGameMenu uvm. mit css gestylt  |✔                                                                                                                                                                                |
 | 14 | Enden          | Neutral , Bad, Best Ending  |✔                                                                                                                                                                                |
 <br>
 
