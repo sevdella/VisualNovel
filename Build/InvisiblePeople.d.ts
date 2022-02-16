@@ -178,6 +178,7 @@ declare namespace Template {
     let dataForSave: {
         points: number;
     };
+    function showCredits(): void;
 }
 declare namespace Template {
     function QuickEnding(): ƒS.SceneReturn;
