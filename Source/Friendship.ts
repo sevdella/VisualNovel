@@ -23,7 +23,8 @@ namespace Template {
                 T0003: "Don't panic! It's not that big of a deal!",
                 T0004: "You shouldn't hide it, let me help you get rid of that fear",
                 T0005: "I'm just like you",
-                T0006: "You learned to love yourself and that's how you got confident"
+                T0006: "You learned to love yourself and that's how you got confident",
+                T0007: "If you ever need someone to talk to, call me",
 
             }
         }
@@ -41,7 +42,7 @@ namespace Template {
         await ƒS.update(0.2);
         await ƒS.Speech.tell(characters.rame,text.rame.T0001);
         await ƒS.Location.show(locations.bookshop);
-        await ƒS.update(transitions.swirl.duration, transitions.swirl.alpha, transitions.swirl.edge);
+        await ƒS.update(transitions.stripes.duration, transitions.stripes.alpha, transitions.stripes.edge);
         ƒS.update();
         await ƒS.Character.hide(characters.rame);
         await ƒS.Character.show(characters.rame,characters.rame.pose.happy, ƒS.positionPercent(50,110));
@@ -75,9 +76,14 @@ namespace Template {
             case PanicAttack.seekhelp:
             await ƒS.Speech.tell(characters.inara, text.inara.T0003);
             await ƒS.Speech.tell(characters.rame,text.rame.T0004);
+            await ƒS.Speech.tell(characters.rame,text.rame.T0007);
             await ƒS.Character.hide(characters.inara);
             await ƒS.Character.hide(characters.rame);
+            await ƒS.update(2);
+            await ƒS.Location.show(locations.phone);
+            await ƒS.update(2);
             await ƒS.Location.show(locations.timeskip);
+            ƒS.Speech.hide();
             return "Glitch";
 
             case PanicAttack.runaway:

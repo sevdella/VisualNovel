@@ -2,6 +2,9 @@ declare namespace Template {
     function BadEnding(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function BestEnding(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function Books(): ƒS.SceneReturn;
 }
 declare namespace Template {
@@ -9,6 +12,9 @@ declare namespace Template {
 }
 declare namespace Template {
     function Drawing(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function End(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function Friendship(): ƒS.SceneReturn;
@@ -55,6 +61,7 @@ declare namespace Template {
         click: string;
         paper: string;
         thunder: string;
+        ring: string;
     };
     let locations: {
         school: {
@@ -121,6 +128,19 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        phone: {
+            name: string;
+            background: string;
+        };
+    };
+    let data: {
+        phone: {
+            number: string;
+        };
+        score: number;
+        state: {
+            a: number;
+        };
     };
     let characters: {
         narrator: {
@@ -153,6 +173,8 @@ declare namespace Template {
     function fromRighttoLeft(): ƒS.AnimationDefinition;
     function fromRightToOutOfCanvas(): ƒS.AnimationDefinition;
     function fromLeftToOutOfCanvas(): ƒS.AnimationDefinition;
+    function ToTheCenterLeft(): ƒS.AnimationDefinition;
+    function ToTheCenterRight(): ƒS.AnimationDefinition;
     let dataForSave: {
         points: number;
     };

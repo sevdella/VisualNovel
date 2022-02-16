@@ -3,13 +3,61 @@ var Template;
 (function (Template) {
     async function BadEnding() {
         console.log("BadEnding");
+        let text = {
+            narrator: {
+                T0000: "Yet Again Inara pushes the people away from her as soon as she experiences an inconvinience",
+                T0001: "She doesn't want to get hurt",
+                T0002: "But she has people to lean on",
+                T0003: "Try to be more trusting and don't try to get through your sufferings on your own"
+            }
+        };
         Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 0.1, false);
         Template.ƒS.Sound.fade(Template.sound.neonheart, 0.3, 0.1, true);
         Template.ƒS.Character.hideAll();
         await Template.ƒS.Location.show(Template.locations.greyheart);
         await Template.ƒS.update(0.7);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0003);
+        Template.ƒS.Speech.hide();
+        Template.ƒS.Sound.fade(Template.sound.neonheart, 0, 0.1, false);
     }
     Template.BadEnding = BadEnding;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function BestEnding() {
+        console.log("BestEnding");
+        let text = {
+            inara: {
+                T0000: "What's going on?",
+                T0001: "M-My heart's starting to glow again?",
+                T0002: "Ramé is that your colour??",
+                T0003: "This is amazing"
+            },
+            rame: {
+                T0000: "I have no idea?",
+                T0001: "Mine too",
+                T0002: "Look at the other half of your heart!",
+                T0003: "Yes it is, and I have yours..."
+            }
+        };
+        await Template.ƒS.Sound.fade(Template.sound.neonheart, 0.3, 1);
+        await Template.ƒS.update();
+        await Template.ƒS.Location.show(Template.locations.fullheart);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
+        Template.ƒS.Speech.hide();
+        await Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 0.2, false);
+    }
+    Template.BestEnding = BestEnding;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -123,6 +171,11 @@ var Template;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
+    async function End() { }
+    Template.End = End;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
     async function Friendship() {
         console.log("Friendship");
         let text = {
@@ -144,7 +197,8 @@ var Template;
                 T0003: "Don't panic! It's not that big of a deal!",
                 T0004: "You shouldn't hide it, let me help you get rid of that fear",
                 T0005: "I'm just like you",
-                T0006: "You learned to love yourself and that's how you got confident"
+                T0006: "You learned to love yourself and that's how you got confident",
+                T0007: "If you ever need someone to talk to, call me",
             }
         };
         await Template.ƒS.Location.show(Template.locations.black);
@@ -161,7 +215,7 @@ var Template;
         await Template.ƒS.update(0.2);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
         await Template.ƒS.Location.show(Template.locations.bookshop);
-        await Template.ƒS.update(Template.transitions.swirl.duration, Template.transitions.swirl.alpha, Template.transitions.swirl.edge);
+        await Template.ƒS.update(Template.transitions.stripes.duration, Template.transitions.stripes.alpha, Template.transitions.stripes.edge);
         Template.ƒS.update();
         await Template.ƒS.Character.hide(Template.characters.rame);
         await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.happy, Template.ƒS.positionPercent(50, 110));
@@ -188,9 +242,14 @@ var Template;
             case PanicAttack.seekhelp:
                 await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
                 await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0004);
+                await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0007);
                 await Template.ƒS.Character.hide(Template.characters.inara);
                 await Template.ƒS.Character.hide(Template.characters.rame);
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.phone);
+                await Template.ƒS.update(2);
                 await Template.ƒS.Location.show(Template.locations.timeskip);
+                Template.ƒS.Speech.hide();
                 return "Glitch";
             case PanicAttack.runaway:
                 await Template.ƒS.Character.hide(Template.characters.inara);
@@ -209,7 +268,7 @@ var Template;
         console.log("Glitch");
         let text = {
             narrator: {
-                T0000: "Suddenly at home"
+                T0000: "Suddenly at Inara's home"
             },
             inara: {
                 T0000: "What is happening to me??",
@@ -218,17 +277,32 @@ var Template;
                 T0003: "They will think I'm a freak",
                 T0004: "This is all her fault",
                 T0005: "I should stay away from her",
-                T0006: "I should call her",
+                T0006: "Should I call her?",
                 T0007: "Maybe she has an idea what's happening",
                 T0008: "Thank you for showing this side of myself",
-                T0009: "I just had to believe in myself more"
+                T0009: "I just had to believe in myself more",
+                T0010: "Her number is"
+            },
+            rame: {
+                T0000: "That was all you!",
+                T0001: "You learned to love yourself and that's how you got confident",
+                T0002: "Come here, don't be scared"
             }
         };
-        await Template.ƒS.update(1);
+        //City
+        await Template.ƒS.update(3);
         await Template.ƒS.Location.show(Template.locations.city);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.embarrassed, Template.ƒS.positionPercent(30, 110));
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0008);
-        Template.ƒS.Sound.fade(Template.sound.neonheart, 0.3, 1);
+        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.flirty, Template.ƒS.positionPercent(50, 110));
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0001);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Location.show(Template.locations.black);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        await Template.ƒS.Speech.hide();
+        //Glitch
+        Template.ƒS.Sound.fade(Template.sound.neonheart, 0.5, 1);
         await Template.ƒS.Location.show(Template.locations.black);
         await Template.ƒS.update(0.1);
         await Template.ƒS.Location.show(Template.locations.heart);
@@ -244,18 +318,47 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.yellowheart);
         await Template.ƒS.update(0.1);
         await Template.ƒS.Location.show(Template.locations.black);
-        Template.ƒS.update(1);
+        Template.ƒS.update(4);
         await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.surprised, Template.ƒS.positionPercent(60, 110));
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0000);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0001);
-        await Template.ƒS.Character.hide(Template.characters.inara);
-        await Template.ƒS.Speech.hide();
-        // School
-        await Template.ƒS.Location.show(Template.locations.school);
-        await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
-        await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.scared, Template.ƒS.positionPercent(50, 110));
-        await Template.ƒS.update(1);
-        return "";
+        await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0006);
+        let GlitchOption = {
+            callrame: "Call Rame",
+            donotcall: "Don't Call Rame"
+        };
+        let Glitch = await Template.ƒS.Menu.getInput(GlitchOption, "individualCSSClass");
+        switch (Glitch) {
+            case GlitchOption.callrame:
+                Template.data.phone.number = await Template.ƒS.Speech.getInput();
+                await Template.ƒS.Speech.tell(Template.characters.inara, "Her number is  " + Template.data.phone.number);
+                await Template.ƒS.Character.hide(Template.characters.inara);
+                await Template.ƒS.Sound.fade(Template.sound.ring, 0.3, 1);
+                await Template.ƒS.update(0.7);
+                await Template.ƒS.Speech.tell(Template.characters.rame, "Hello?");
+                await Template.ƒS.Speech.tell(Template.characters.inara, "Something weird is happening to me!");
+                await Template.ƒS.Speech.tell(Template.characters.rame, "I'll be right there");
+                Template.ƒS.Speech.hide();
+                // Meet-Up
+                await Template.ƒS.Location.show(Template.locations.city);
+                await Template.ƒS.update(Template.transitions.clock.duration, Template.transitions.clock.alpha, Template.transitions.clock.edge);
+                await Template.ƒS.Character.show(Template.characters.rame, Template.characters.rame.pose.scared, Template.ƒS.positionPercent(50, 110));
+                await Template.ƒS.Character.show(Template.characters.inara, Template.characters.inara.pose.upset, Template.ƒS.positionPercent(30, 110));
+                await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0002);
+                await Template.ƒS.Character.animate(Template.characters.rame, Template.characters.rame.pose.scared, Template.ToTheCenterLeft());
+                await Template.ƒS.Character.animate(Template.characters.inara, Template.characters.inara.pose.upset, Template.ToTheCenterRight());
+                await Template.ƒS.update(1);
+                await Template.ƒS.Speech.tell(Template.characters.rame, "Shhh, you're fine, I'm here now");
+                await Template.ƒS.Speech.tell(Template.characters.inara, "What would I do without you...");
+                Template.ƒS.Character.hideAll();
+                Template.ƒS.Speech.hide();
+                await Template.ƒS.Location.show(Template.locations.black);
+                return "BestEnding";
+            case GlitchOption.donotcall:
+                await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0005);
+                await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0004);
+                return "BadEnding";
+        }
     }
     Template.Glitch = Glitch;
 })(Template || (Template = {}));
@@ -413,7 +516,8 @@ var Template;
         //sound
         click: "",
         paper: "./Audio/paper.mp3",
-        thunder: "./Audio/Thunder.mp3"
+        thunder: "./Audio/Thunder.mp3",
+        ring: "./Audio/Ring.mp3"
     };
     Template.locations = {
         school: {
@@ -479,6 +583,19 @@ var Template;
         fullheart: {
             name: "Fullheart",
             background: "./Images/Background/Fullheart.png"
+        },
+        phone: {
+            name: "Phone",
+            background: "./Images/Background/phone.png"
+        }
+    };
+    Template.data = {
+        phone: {
+            number: ""
+        },
+        score: 0,
+        state: {
+            a: 1
         }
     };
     Template.characters = {
@@ -503,7 +620,7 @@ var Template;
                 angry: "./Images/Characters/Angry_Inara.png",
                 happy: "./Images/Characters/Happy_Inara.png",
                 upset: "./Images/Characters/Sad_Inara.png",
-                embarrassed: "./Images/Charcters/Embarrassed_Inara.png",
+                embarrassed: "./Images/Characters/Embarrassed_Inara.png",
                 surprised: "./Images/Characters/Surprised_Inara.png",
                 shy: "./Images/Characters/Shy_Inara2.png",
             }
@@ -537,13 +654,31 @@ var Template;
         };
     }
     Template.fromLeftToOutOfCanvas = fromLeftToOutOfCanvas;
+    function ToTheCenterLeft() {
+        return {
+            start: { translation: Template.ƒS.positionPercent(50, 110) },
+            end: { translation: Template.ƒS.positionPercent(40, 110) },
+            duration: 1,
+            playmode: Template.ƒS.ANIMATION_PLAYMODE.PLAYONCE
+        };
+    }
+    Template.ToTheCenterLeft = ToTheCenterLeft;
+    function ToTheCenterRight() {
+        return {
+            start: { translation: Template.ƒS.positionPercent(30, 110) },
+            end: { translation: Template.ƒS.positionPercent(40, 110) },
+            duration: 1,
+            playmode: Template.ƒS.ANIMATION_PLAYMODE.PLAYONCE
+        };
+    }
+    Template.ToTheCenterRight = ToTheCenterRight;
     Template.dataForSave = {
         points: 0
     };
     let inGameMenu = {
         save: "Save",
         load: "Load",
-        close: "Close"
+        close: "Close",
         // open: "Open"
     };
     let gameMenu;
@@ -601,21 +736,18 @@ var Template;
         gameMenu = Template.ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
         let scenes = [
             // Linear
-            // { id: "Einführung", scene: Introduction, name: "Introduction to FS", next: "Ende"},
             { scene: Template.Introduction, name: "Introduction to FS" },
-            // { scene: Scene2, name: "Scene Two" }
-            // { id: "Ende", scene: End, name: "The End" }
-            { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding" },
+            { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding", next: "End" },
             { id: "Conversation", scene: Template.Conversation, name: "Conversation" },
             { id: "Thriftshop", scene: Template.Thriftshop, name: "Thriftshop" },
             { id: "Books", scene: Template.Books, name: "Books" },
             { id: "Drawing", scene: Template.Drawing, name: "Drawing" },
             { id: "Truth", scene: Template.Truth, name: "Truth" },
             { id: "Glitch", scene: Template.Glitch, name: "Glitch" },
-            { id: "BadEnding", scene: Template.BadEnding, name: "BadEnding" },
-            //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
-            //{id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},
+            { id: "BadEnding", scene: Template.BadEnding, name: "BadEnding", next: "End" },
             { id: "Friendship", scene: Template.Friendship, name: "Friendship" },
+            { id: "BestEnding", scene: Template.BestEnding, name: "BestEnding", next: "End" },
+            { id: "End", scene: Template.End, name: "End" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
@@ -623,14 +755,6 @@ var Template;
         Template.ƒS.Progress.go(scenes);
     }
 })(Template || (Template = {}));
-//export function fromLJirkaAnimationt(); ƒS.AnimationDefinition {
-//return {
-//start: {translation: ƒS.positions.bottomleft, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS ("white", 0.5)},
-//end: { translation: ƒS.positions.bottomright, rotation: 20, scalind: new ƒS.Position(1.5,0.5), color: ƒS.Color.CSS("red")},
-//duration: 1,
-//playmode: ƒS.ANIMATION_PLAYMODE.LOOP
-// };
-//}
 var Template;
 (function (Template) {
     async function QuickEnding() {

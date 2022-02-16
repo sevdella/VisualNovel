@@ -44,7 +44,8 @@ namespace Template {
     //sound
     click: "",
     paper: "./Audio/paper.mp3", 
-    thunder:"./Audio/Thunder.mp3"
+    thunder:"./Audio/Thunder.mp3",
+    ring: "./Audio/Ring.mp3"
   };
 
   export let locations = {
@@ -119,8 +120,22 @@ namespace Template {
     fullheart: {
       name:"Fullheart",
       background:"./Images/Background/Fullheart.png"
+    },
+    phone: {
+      name: "Phone",
+      background:"./Images/Background/phone.png"
     }
   };
+
+  export let data = {
+    phone: {
+        number: ""
+    },
+    score: 0,
+    state: {
+        a: 1
+    }
+};
 
   export let characters = {
     narrator: {
@@ -144,7 +159,7 @@ namespace Template {
         angry: "./Images/Characters/Angry_Inara.png",
         happy: "./Images/Characters/Happy_Inara.png",
         upset: "./Images/Characters/Sad_Inara.png",
-        embarrassed: "./Images/Charcters/Embarrassed_Inara.png",
+        embarrassed: "./Images/Characters/Embarrassed_Inara.png",
         surprised: "./Images/Characters/Surprised_Inara.png",
         shy: "./Images/Characters/Shy_Inara2.png",
       }
@@ -179,15 +194,36 @@ namespace Template {
     };
   }
 
+  export function ToTheCenterLeft(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 110) },
+      end: { translation: ƒS.positionPercent(40, 110) },
+      duration: 1,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+
+  export function ToTheCenterRight(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(30, 110) },
+      end: { translation: ƒS.positionPercent(40, 110) },
+      duration: 1,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+
+
   export let dataForSave = {
     points: 0
 
   };
 
+
+
   let inGameMenu = {
     save: "Save",
     load: "Load",
-    close: "Close"
+    close: "Close",
     // open: "Open"
   };
 
@@ -255,21 +291,19 @@ namespace Template {
     gameMenu = ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
     let scenes: ƒS.Scenes = [
       // Linear
-      // { id: "Einführung", scene: Introduction, name: "Introduction to FS", next: "Ende"},
       { scene: Introduction, name: "Introduction to FS" },
-      // { scene: Scene2, name: "Scene Two" }
-      // { id: "Ende", scene: End, name: "The End" }
-      {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding"},
+    
+      {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding", next: "End"},
       {id: "Conversation", scene:Conversation, name: "Conversation"},
       {id: "Thriftshop", scene:Thriftshop, name: "Thriftshop"},
       {id: "Books", scene:Books, name: "Books"},
       {id:"Drawing", scene:Drawing, name: "Drawing"},
       {id: "Truth", scene:Truth, name:"Truth"},
       {id: "Glitch", scene:Glitch, name:"Glitch"},
-      {id: "BadEnding", scene:BadEnding, name:"BadEnding"},
-      //{id: "ShoppingWithRame", scene:ShoppingWithRame, name: "ShoppingWithRame"},
-      //{id: "DayWithRame", scene:DayWithRame, name: "DayWithRame"},
+      {id: "BadEnding", scene:BadEnding, name:"BadEnding", next: "End"},
       {id: "Friendship", scene:Friendship, name: "Friendship"},
+      {id: "BestEnding", scene: BestEnding, name: "BestEnding", next: "End"},
+      {id: "End", scene: End, name: "End"}
 
 
     ];
@@ -285,12 +319,3 @@ namespace Template {
   }
 
 }
-
-//export function fromLJirkaAnimationt(); ƒS.AnimationDefinition {
- //return {
- //start: {translation: ƒS.positions.bottomleft, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS ("white", 0.5)},
- //end: { translation: ƒS.positions.bottomright, rotation: 20, scalind: new ƒS.Position(1.5,0.5), color: ƒS.Color.CSS("red")},
- //duration: 1,
- //playmode: ƒS.ANIMATION_PLAYMODE.LOOP
-// };
-//}
