@@ -30,6 +30,7 @@ var Template;
     async function BestEnding() {
         console.log("BestEnding");
         let text = {
+            narrator: {},
             inara: {
                 T0000: "What's going on?",
                 T0001: "M-My heart's starting to glow again?",
@@ -679,11 +680,17 @@ var Template;
         save: "Save",
         load: "Load",
         close: "Close",
+        credits: "Credits"
         // open: "Open"
     };
     let gameMenu;
     // true = offen; false = geschlossen
     let menu = true;
+    function showCredits() {
+        Template.ƒS.Text.addClass("credits");
+        Template.ƒS.Text.print("<h4>Characters:</h4> Sevda Mahmutovic <p> <h4>Backgrounds:</h4> Sevda Mahmutovic <br> https://animelandscape.blogspot.com/</p> <p><h4>Sounds:</h4> https://www.youtube.com/watch?v=kXYIut4TnhI <br> https://www.youtube.com/watch?v=vJ08fwaLXwg <br> https://www.youtube.com/watch?v=SwGsS3jJkB8 <br> https://www.youtube.com/watch?v=MtHjkMYWI84 <br> https://pixabay.com/music/modern-classical-the-introvert-michael-kobrin-10959/ <br> NO COPYRIGHT FOR THE SOUNDS");
+    }
+    Template.showCredits = showCredits;
     async function buttonFunctionalities(_option) {
         console.log(_option);
         switch (_option) {
@@ -697,6 +704,9 @@ var Template;
                 gameMenu.close();
                 menu = false;
                 break;
+            case inGameMenu.credits:
+            case inGameMenu.credits:
+                showCredits();
             // case inGameMenu.open:
             //   gameMenu.open();
             //   menu = true;

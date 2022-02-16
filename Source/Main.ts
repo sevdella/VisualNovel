@@ -218,12 +218,11 @@ namespace Template {
 
   };
 
-
-
   let inGameMenu = {
     save: "Save",
     load: "Load",
     close: "Close",
+    credits: "Credits"
     // open: "Open"
   };
 
@@ -232,6 +231,11 @@ namespace Template {
 
   // true = offen; false = geschlossen
   let menu: boolean = true;
+
+  export function showCredits(): void {
+    ƒS.Text.addClass("credits");
+    ƒS.Text.print("<h4>Characters:</h4> Sevda Mahmutovic <p> <h4>Backgrounds:</h4> Sevda Mahmutovic <br> https://animelandscape.blogspot.com/</p> <p><h4>Sounds:</h4> https://www.youtube.com/watch?v=kXYIut4TnhI <br> https://www.youtube.com/watch?v=vJ08fwaLXwg <br> https://www.youtube.com/watch?v=SwGsS3jJkB8 <br> https://www.youtube.com/watch?v=MtHjkMYWI84 <br> https://pixabay.com/music/modern-classical-the-introvert-michael-kobrin-10959/ <br> NO COPYRIGHT FOR THE SOUNDS");
+  }
 
   async function buttonFunctionalities(_option: string): Promise<void> {
     console.log(_option);
@@ -246,6 +250,9 @@ namespace Template {
         gameMenu.close();
         menu = false;
         break;
+        case inGameMenu.credits:
+      case inGameMenu.credits:
+        showCredits();
       // case inGameMenu.open:
       //   gameMenu.open();
       //   menu = true;

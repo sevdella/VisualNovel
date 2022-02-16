@@ -3,6 +3,9 @@ namespace Template {
         console.log("BestEnding");
 
         let text = {
+            narrator: {
+
+            },
             inara: {
                 T0000: "What's going on?",
                 T0001: "M-My heart's starting to glow again?",
