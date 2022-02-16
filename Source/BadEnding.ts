@@ -4,7 +4,7 @@ namespace Template {
 
         let text = {
           narrator: {
-            T0000: "Yet Again Inara pushes the people away from her as soon as she experiences an inconvinience",
+            T0000: "Yet Again Inara pushes the people away from her as soon as she experiences an inconvenience",
             T0001: "She doesn't want to get hurt",
             T0002: "But she has people to lean on",
             T0003: "Try to be more trusting and don't try to get through your sufferings on your own"

@@ -32,15 +32,16 @@ speech name{
   font-weight: bold;
   color:lightblue;
   font-variant: small-caps;
+  font-size: 18px;
 }
 
 speech content{
-  font-size:25px;
+  font-size:20px;
 }
 
 .individualCSSClass{
   padding: 15px; 
-  border-style: inset;
+  border-style: solid;
   border-radius: 15px;
   border-width: thick;
   border-color: navy;
@@ -59,4 +60,27 @@ speech content{
 
 .individualCSSClass button:hover{
   background-color: lightblue;
+}
+
+.gameMenu {
+background-color: transparent;
+border-color: transparent;
+
+}
+
+.gameMenu button {
+  background-color: lightblue;
+  border: none;
+  color: navy;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.credits{
+  background-color: lightblue;
+  border-color: transparent;
+  border-radius: 10px;
 }
