@@ -33,7 +33,7 @@ Alle Charaktere und einige Hintergründe sind selbst gezeichnet.
 
 ##  Abgabeformat
 
-* Die Konzeption soll als .pdf-Dokument abgegeben werden.
+* Konzept: https://github.com/sevdella/VisualNovel/tree/main/Konzept
 * Platziere einen Link in der Readme-Datei deines VisualNovel-Repositories auf Github auf die fertige und in Github-Pages lauffähige Anwendung.
 * Platziere ebenso Links zu den Stellen in deinem Repository, an denen der Quellcode und das Konzept-Dokument zu finden sind.
 * Stelle zudem auf diese Art dort auch ein gepacktes Archiv zur Verfügung, welches folgende Daten enthält
