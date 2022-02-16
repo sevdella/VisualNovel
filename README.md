@@ -37,9 +37,9 @@ Alle Charaktere und einige Hintergründe sind selbst gezeichnet.
 
 ##  Abgabeformat
 
-* Concept: https://github.com/sevdella/VisualNovel/tree/main/Konzept
 * Visual Novel: https://sevdella.github.io/VisualNovel/InvisiblePeople.html
-* Platziere ebenso Links zu den Stellen in deinem Repository, an denen der Quellcode und das Konzept-Dokument zu finden sind.
+* Konzept: https://github.com/sevdella/VisualNovel/tree/main/Konzept
+* Quellcode: https://github.com/sevdella/VisualNovel/tree/main/Source
 * Stelle zudem auf diese Art dort auch ein gepacktes Archiv zur Verfügung, welches folgende Daten enthält
   * Das Konzept-Dokument 
   * Die Projektordner inklusive aller erforderlichen Dateien, also auch Bild- und Audiodaten
