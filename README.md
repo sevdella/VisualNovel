@@ -1,4 +1,4 @@
-# Invisible_People
+# Invisible People
 Humans are born with a transparent spot over their hearts, just like a small round window. The heart is made of a neon
 tube and each person has their own individual colour. It even exposes their emotions and current relationship. Depending
 on their mood, the neon heart changes its saturation or luminosity, and as soon as a person finds their soulmate in
