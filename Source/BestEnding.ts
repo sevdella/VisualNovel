@@ -4,6 +4,9 @@ namespace Template {
 
         let text = {
             narrator: {
+                T0000: "You have made it it to the Best Ending",
+                T0001: "Inara has finally found happiness",
+                T0002: "and much more..."
 
             },
             inara: {
@@ -32,6 +35,9 @@ namespace Template {
         await ƒS.Speech.tell(characters.inara, text.inara.T0002);
         await ƒS.Speech.tell(characters.rame,text.rame.T0003);
         await ƒS.Speech.tell(characters.inara, text.inara.T0003);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0000);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
         ƒS.Speech.hide();
         await ƒS.Sound.fade(sound.backgroundTheme,0,0.2,false);
         

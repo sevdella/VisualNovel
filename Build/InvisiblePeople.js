@@ -5,7 +5,7 @@ var Template;
         console.log("BadEnding");
         let text = {
             narrator: {
-                T0000: "Yet Again Inara pushes the people away from her as soon as she experiences an inconvinience",
+                T0000: "Yet Again Inara pushes the people away from her as soon as she experiences an inconvenience",
                 T0001: "She doesn't want to get hurt",
                 T0002: "But she has people to lean on",
                 T0003: "Try to be more trusting and don't try to get through your sufferings on your own"
@@ -30,7 +30,11 @@ var Template;
     async function BestEnding() {
         console.log("BestEnding");
         let text = {
-            narrator: {},
+            narrator: {
+                T0000: "You have made it it to the Best Ending",
+                T0001: "Inara has finally found happiness",
+                T0002: "and much more..."
+            },
             inara: {
                 T0000: "What's going on?",
                 T0001: "M-My heart's starting to glow again?",
@@ -55,6 +59,9 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0002);
         await Template.ƒS.Speech.tell(Template.characters.rame, text.rame.T0003);
         await Template.ƒS.Speech.tell(Template.characters.inara, text.inara.T0003);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.narrator, text.narrator.T0002);
         Template.ƒS.Speech.hide();
         await Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 0.2, false);
     }
