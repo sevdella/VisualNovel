@@ -19,12 +19,13 @@ html, body{
 
 speech {
   position: absolute;
-  bottom: 10px;
-  left: 20px;
+  bottom: 20px;
+  left: 60px;
   padding: 10px;
   color: white;
   background-color: rgba(11, 14, 19, 0.9);
-  width: 100%;
+  border-radius: 15px;
+  width: 90%;
   height: 10vh;
 }
 
@@ -33,11 +34,14 @@ speech name{
   color:lightblue;
   font-variant: small-caps;
   font-size: 18px;
+  margin: 10px;
 }
 
 speech content{
   font-size:20px;
+  margin: 20px;
 }
+
 
 .individualCSSClass{
   padding: 15px; 
@@ -69,7 +73,7 @@ border-color: transparent;
 }
 
 .gameMenu button {
-  background-color: lightblue;
+  background-color: rgba(173, 216, 230, 0.8); 
   border: none;
   color: navy;
   padding: 10px 22px;

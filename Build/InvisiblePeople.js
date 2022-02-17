@@ -474,13 +474,7 @@ var Template;
                 break;
         }
         Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 1);
-        //ƒS.Character.hideAll();
         await Template.ƒS.update(1);
-        // if (dataForSave.points === 100) {
-        //   return: End();
-        // }
-        // return "Ende";
-        //return End();
     }
     Template.Introduction = Introduction;
 })(Template || (Template = {}));
@@ -611,7 +605,7 @@ var Template;
             name: "Narrator"
         },
         rame: {
-            name: "Rame",
+            name: "Ramé",
             origin: Template.ƒS.ORIGIN.BOTTOMLEFT,
             pose: {
                 angry: "./Images/Characters/Angry_Rame.png",

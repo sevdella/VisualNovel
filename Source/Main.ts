@@ -142,7 +142,7 @@ namespace Template {
       name: "Narrator"
     },
     rame: {
-      name: "Rame",
+      name: "Ramé",
       origin: ƒS.ORIGIN.BOTTOMLEFT, //Anzeigeort des Charakters
       pose: {
         angry: "./Images/Characters/Angry_Rame.png",

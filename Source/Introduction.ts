@@ -132,15 +132,7 @@ namespace Template {
     
 
     ƒS.Sound.fade(sound.backgroundTheme, 0, 1);
-    //ƒS.Character.hideAll();
     await ƒS.update(1);
-
-    // if (dataForSave.points === 100) {
-    //   return: End();
-    // }
-
-    // return "Ende";
-    //return End();
   }
 
 }
