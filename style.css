@@ -50,13 +50,14 @@ speech content{
   border-width: thick;
   border-color: navy;
   border-spacing: 10px;
+  background-color: white;
 }
 
 .individualCSSClass button{
   font-size: 17px;
   font-family:Helvetica;
   height: 50px;
-  width: 100px;
+  width: 200px;
   border: none;
   border-radius: 10px;
   background-color:white;
