@@ -469,7 +469,8 @@ var Template;
                         return "Conversation";
                     case replyToHerDecision.dontAnswer:
                         await Template.ƒS.Speech.tell(Template.characters.inara, "I'd rather not talk about myself");
-                        break;
+                        await Template.ƒS.Speech.tell(Template.characters.rame, "That's fine, I won't ask any further personal questions");
+                        return "QuickEnding";
                 }
                 break;
         }
@@ -748,15 +749,18 @@ var Template;
         let scenes = [
             // Linear
             { scene: Template.Introduction, name: "Introduction to FS" },
-            { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding", next: "End" },
             { id: "Conversation", scene: Template.Conversation, name: "Conversation" },
+            // Neutral Scenes
             { id: "Thriftshop", scene: Template.Thriftshop, name: "Thriftshop" },
             { id: "Books", scene: Template.Books, name: "Books" },
             { id: "Drawing", scene: Template.Drawing, name: "Drawing" },
-            { id: "Truth", scene: Template.Truth, name: "Truth" },
-            { id: "Glitch", scene: Template.Glitch, name: "Glitch" },
-            { id: "BadEnding", scene: Template.BadEnding, name: "BadEnding", next: "End" },
+            // {id: "Truth", scene:Truth, name:"Truth"},
             { id: "Friendship", scene: Template.Friendship, name: "Friendship" },
+            // Turning Point
+            { id: "Glitch", scene: Template.Glitch, name: "Glitch" },
+            // Endings
+            { id: "QuickEnding", scene: Template.QuickEnding, name: "QuickEnding", next: "End" },
+            { id: "BadEnding", scene: Template.BadEnding, name: "BadEnding", next: "End" },
             { id: "BestEnding", scene: Template.BestEnding, name: "BestEnding", next: "End" },
             { id: "End", scene: Template.End, name: "End" }
         ];

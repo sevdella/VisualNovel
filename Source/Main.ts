@@ -300,15 +300,18 @@ namespace Template {
       // Linear
       { scene: Introduction, name: "Introduction to FS" },
     
-      {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding", next: "End"},
       {id: "Conversation", scene:Conversation, name: "Conversation"},
+      // Neutral Scenes
       {id: "Thriftshop", scene:Thriftshop, name: "Thriftshop"},
       {id: "Books", scene:Books, name: "Books"},
-      {id:"Drawing", scene:Drawing, name: "Drawing"},
-      {id: "Truth", scene:Truth, name:"Truth"},
-      {id: "Glitch", scene:Glitch, name:"Glitch"},
-      {id: "BadEnding", scene:BadEnding, name:"BadEnding", next: "End"},
+      {id: "Drawing", scene:Drawing, name: "Drawing"},
+      // {id: "Truth", scene:Truth, name:"Truth"},
       {id: "Friendship", scene:Friendship, name: "Friendship"},
+      // Turning Point
+      {id: "Glitch", scene:Glitch, name:"Glitch"},
+      // Endings
+      {id: "QuickEnding", scene:QuickEnding, name: "QuickEnding", next: "End"},
+      {id: "BadEnding", scene:BadEnding, name:"BadEnding", next: "End"},
       {id: "BestEnding", scene: BestEnding, name: "BestEnding", next: "End"},
       {id: "End", scene: End, name: "End"}
 

@@ -118,7 +118,8 @@ namespace Template {
 
           case replyToHerDecision.dontAnswer:
             await ƒS.Speech.tell(characters.inara, "I'd rather not talk about myself");
-            break;
+            await ƒS.Speech.tell(characters.rame, "That's fine, I won't ask any further personal questions")
+            return "QuickEnding";
         }
         break;
 
